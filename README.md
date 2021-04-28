@@ -7,7 +7,7 @@ To receive <b>in</b>-peers make sure port range17400-17403 is open on the router
 <li><code>latest</code></li>
 <li><code>7.0.1</code></li>
 </ul>
-
+<br>
 <h1>Runing the node</h1>
 
 <h2>With default data location</h2>
