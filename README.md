@@ -23,9 +23,13 @@ this will persist the blockchain data in <i>/home/.safex</i> on the host<br>
 When new version is released and there is no new container yet, override version by overriding environmental variable, i.e to set it to 7.0.0<br>
 <code>$ docker run -p 17400-17403:17400-17403 <b>-e VERSION=7.0.0</b> -v [volume]:/data safexninja/safex-node</code><br><br>
 
-<h1>Runing the node</h1>
-Installing Docker on Ubuntu and run the latest node:<br>
+<h1>Installing Docker & Runing the node</h1>
+Installing Docker on Ubuntu and run the latest node.<br>
+If you have not installed docker yet, follow these steps:<br><br>
+
 <code>$ sudo apt update</code><br>
 <code>$ sudo apt install snapd</code><br>
 <code>$ sudo snap install docker</code><br>
 <code>$ docker run -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
+<br>
+If you have docker installed already (i.e. Docker Desktop on Mac), then just run the last command only
