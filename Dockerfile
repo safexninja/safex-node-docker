@@ -23,4 +23,4 @@ LABEL core-version=$VERSION
 LABEL description="Running Safex Core Node"
 LABEL info="See https://github.com/safex/safexcore/"
 
-CMD ./safexd-linux-$VERSION --in-peers=50 --out-peers=50 --non-interactive --data-dir=/data
+CMD ./safexd-linux-$VERSION --in-peers=50 --out-peers=50 --data-dir=/data
