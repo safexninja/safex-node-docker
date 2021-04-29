@@ -21,6 +21,9 @@ To receive <b>in</b>-peers make sure port range17400-17403 is open on the router
 this will persist the blockchain data in <i>/home/.safex</i> on the host<br>
 
 <br>
+<h1>Help & Commands</h1>
+While the node is running type <code>help</code> to get a list of available commands<br>
+<br>
 
 <h1>Exit</h1>
 To exit the node type <code>save</code> followed by <code>exit</code>. The container will be exited<br>
