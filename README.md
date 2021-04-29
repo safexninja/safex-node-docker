@@ -12,16 +12,19 @@ To receive <b>in</b>-peers make sure port range17400-17403 is open on the router
 <h1>Runing the node</h1>
 <br>
 <h2>With default data location</h2><br>
-<code>$ docker run -p 17400-17403:17400-17403 safexninja/safex-node</code>
+<code>$ docker run -i -p 17400-17403:17400-17403 safexninja/safex-node</code>
 
 <br><h2>With mount local volume (on the host) to /data folder in the container</h2>
-<code>$ docker run -p 17400-17403:17400-17403 -v [volume]:/data safexninja/safex-node</code><br><br>
+<code>$ docker run -i -p 17400-17403:17400-17403 -v [volume]:/data safexninja/safex-node</code><br><br>
 <b>example</b><br>
-<code>$ docker run -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
+<code>$ docker run -i -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
 this will persist the blockchain data in <i>/home/.safex</i> on the host<br>
 
-<br><br>
+<br>
 
+<h1>Exit</h1>
+To exit the node type <code>save</code> followed by <code>exit</code>. The container will be exited<br>
+<br>
 <h1>Installing Docker & Runing the node</h1>
 Installing Docker on Ubuntu and run the latest node.<br>
 If you have not installed docker yet, follow these steps:<br><br>
@@ -29,6 +32,6 @@ If you have not installed docker yet, follow these steps:<br><br>
 <code>$ sudo apt update</code><br>
 <code>$ sudo apt install snapd</code><br>
 <code>$ sudo snap install docker</code><br>
-<code>$ docker run -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
+<code>$ docker run -i -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
 <br>
 If you have docker installed already (i.e. Docker Desktop on Mac), then just run the last command only
