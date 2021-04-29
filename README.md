@@ -10,8 +10,8 @@ To receive <b>in</b>-peers make sure port range17400-17403 is open on the router
 </ul>
 <br>
 <h1>Runing the node</h1>
-
-<h2>With default data location</h2>
+<br>
+<h2>With default data location</h2><br>
 <code>$ docker run -p 17400-17403:17400-17403 safexninja/safex-node</code>
 
 <br><h2>With mount local volume (on the host) to /data folder in the container</h2>
@@ -20,9 +20,7 @@ To receive <b>in</b>-peers make sure port range17400-17403 is open on the router
 <code>$ docker run -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
 this will persist the blockchain data in <i>/home/.safex</i> on the host<br>
 
-<br><h2>Override version number</h2>
-When new version is released and there is no new container yet, override version by overriding environmental variable, i.e to set it to 7.0.0<br>
-<code>$ docker run -p 17400-17403:17400-17403 <b>-e VERSION=7.0.0</b> -v [volume]:/data safexninja/safex-node</code><br><br>
+<br><br>
 
 <h1>Installing Docker & Runing the node</h1>
 Installing Docker on Ubuntu and run the latest node.<br>
