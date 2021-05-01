@@ -15,7 +15,7 @@ Be aware: when starting the node for the fist time it will start synchronizing w
 <h2>With default data location</h2><br>
 <code>$ docker run -i -p 17400-17403:17400-17403 safexninja/safex-node</code>
 
-<br><h2>With mount local volume (on the host) to /data folder in the container</h2>
+<br><h2>Recommended: With mount local volume (on the host) to /data folder in the container</h2>
 <code>$ docker run -i -p 17400-17403:17400-17403 -v [volume]:/data safexninja/safex-node</code><br><br>
 <b>example</b><br>
 <code>$ docker run -i -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
