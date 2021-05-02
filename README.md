@@ -17,9 +17,12 @@ Be aware: when starting the node for the fist time it will start synchronizing w
 
 <br><h2>Recommended: With mount local volume (on the host) to /data folder in the container</h2>
 <code>$ docker run -i -p 17400-17403:17400-17403 -v [volume]:/data safexninja/safex-node</code><br><br>
-<b>example</b><br>
-<code>$ docker run -i -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br>
+<b>example linux/mac</b><br>
+<code>$ docker run -i -p 17400-17403:17400-17403 -v <b>/home/.safex</b>:/data safexninja/safex-node</code><br><br>
 this will persist the blockchain data in <i>/home/.safex</i> on the host<br>
+<b>example windows</b><br>
+<code>$ docker run -i -p 17400-17403:17400-17403 -v <b>/c/data/.safex</b>:/data safexninja/safex-node</code><br>
+this will persist the blockchain data in <i>c:/data/.safex</i> on the host<br>
 
 <br>
 <h1>Help & Commands</h1>
