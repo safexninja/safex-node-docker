@@ -7,11 +7,16 @@ RUN apt-get update -y && \
     wget \
     libzmq3-dev \
     libpcsclite-dev 
- 
-WORKDIR /root
+
+ARG USER=docker
+ENV HOME /home/$USER
+
+RUN addgroup -S $USER && adduser -S -G $USER $USER 
+
+USER $USER
+WORKDIR $HOME
 
 RUN mkdir /data
-RUN chown 1000:1000 /data -R 
 
 RUN wget https://github.com/safex/safexcore/releases/download/$VERSION/safexd-linux-$VERSION
 RUN chmod +x safexd-linux-$VERSION
@@ -24,3 +29,4 @@ LABEL description="Running Safex Core Node"
 LABEL info="See https://github.com/safex/safexcore/"
 
 CMD ./safexd-linux-$VERSION --in-peers=50 --out-peers=50 --data-dir=/data
+
