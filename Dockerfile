@@ -4,6 +4,7 @@ ENV VERSION=7.0.1
 
 RUN apt-get update -y && \
     apt-get install -y \
+    sudo \
     wget \
     libzmq3-dev \
     libpcsclite-dev 
@@ -11,12 +12,16 @@ RUN apt-get update -y && \
 ARG USER=docker
 ENV HOME /home/$USER
 
-RUN addgroup -S $USER && adduser -S -G $USER $USER 
+RUN adduser --disabled-password --gecos '' $USER
+RUN adduser $USER sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+USER docker
 
 USER $USER
 WORKDIR $HOME
-
-RUN mkdir /data
+ 
+RUN  sudo mkdir /data
 
 RUN wget https://github.com/safex/safexcore/releases/download/$VERSION/safexd-linux-$VERSION
 RUN chmod +x safexd-linux-$VERSION
@@ -28,5 +33,5 @@ LABEL core-version=$VERSION
 LABEL description="Running Safex Core Node"
 LABEL info="See https://github.com/safex/safexcore/"
 
-CMD ./safexd-linux-$VERSION --in-peers=50 --out-peers=50 --data-dir=/data
+CMD sudo ./safexd-linux-$VERSION --in-peers=50 --out-peers=50 --data-dir=/data
 
