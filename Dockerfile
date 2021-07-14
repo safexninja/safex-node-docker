@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-ENV VERSION=7.0.1
+ENV VERSION=7.0.2
 
 RUN apt-get update -y && \
     apt-get install -y \

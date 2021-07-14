@@ -7,6 +7,7 @@ Be aware: when starting the node for the fist time it will start synchronizing w
 <h1>Supported Tags</h1>
 <ul>
 <li><code>latest</code></li>
+<li><code>7.0.2</code></li>
 <li><code>7.0.1</code></li>
 </ul>
 <br>
